@@ -75,5 +75,7 @@ app.post("/api/tutor",(req,res)=>{
   res.json({reply:replies[level]||replies.B1,localFallback:true});
 });
 
-app.get("*",(_req,res)=>res.sendFile(path.join(__dirname,"public","index.html")));
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
 app.listen(PORT,()=>console.log(`EnglishUp: http://localhost:${PORT}`));
